@@ -3,7 +3,7 @@
 ## <p align="center"><a href="https://www.bilibili.com/video/BV1TB456ZEoo">使用教程</a>&emsp;&emsp;<a href="https://czjam.github.io/gjgjxweb/">在线体验</a>   </p>
 《搞机工具箱》是一款ADB图形化工具。
 
-本项目移植于个人开发的 [《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可在支持Chrome内核的浏览器体验PC版工具功能，实现免下载安装的跨平台使用体验。
+本项目移植于个人开发的 [《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可运行在基于Chromium内核的浏览器中，实现免下载、免安装的跨平台使用体验。
 
  [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
  
@@ -25,13 +25,13 @@
 | ADB 终端 | Android Shell 交互会话、ANSI 显示、命令历史、补全、复制、清屏与中断 |
 | 软件设置 | 默认启动页、主题配色、界面缩放、CPU 更新间隔、文件接收路径、安装与截图选项、设置导入导出 |
 
-当前界面提供 **USB 有线连接**。功能是否生效取决于设备的 Android 版本、ROM 和 ADB Shell 权限；免 ROOT 不代表能够绕过系统权限限制。进入 Fastboot 的按钮仅发送重启命令，本工具不提供 Fastboot 分区刷写功能。
+当前界面提供 **USB 有线连接**。功能是否生效取决于设备的 Android 版本、ROM 和 ADB Shell 权限。进入 Fastboot 的按钮仅发送重启命令，本工具暂不提供 Fastboot 刷机功能。
 
 ## 快速开始
 
 ### 使用条件
 
-- 使用支持 WebUSB 的 Chrome 或 Edge（不分操作系统，手机安装Chrome也能用）。
+- 使用支持 WebUSB 的 Chrome 或 Edge 或 其他基于Chromium内核的浏览器（不分操作系统，手机安装Chrome也能用）。
 - 手机开启开发者选项和 USB 调试，使用 USB 数据线连接电脑。
 - 通过本机 `localhost` / `127.0.0.1` 或 HTTPS 网站访问页面。
 - Windows 需要能够正常识别手机的 ADB USB 接口，且手机端同意授权请求。
@@ -39,10 +39,10 @@
 
 ### 本地运行
 
-仓库提供 **HTML、CSS、JavaScript 分离版** 与 **单HTML整合版**。页面和第三方依赖均保存在本地，可直接本地部署或执行，无需构建或安装 npm 依赖。
+仓库默认为 **HTML、CSS、JavaScript的前端分离版** ，同时提供AIO的 **单HTML整合版**。页面和第三方依赖均保存在本地，可直接本地部署或执行，无需构建或安装 npm 依赖。
 
 #### 方法1: 整合版
-下载项目docs中的index.html即可。已内嵌完整依赖，使用Chrome内核浏览器直接本地运行。
+下载项目docs中的index.html。已内嵌完整依赖，使用Chromium内核浏览器直接本地运行。
 
 #### 方法2: 分离版
 1. 下载并解压完整项目，保留目录结构。
@@ -94,7 +94,7 @@ WebUSB 的授权和使用条件可参考 [Chrome WebUSB 文档](https://develope
 ├── assets/
 │   └── favicon.svg            # 页面图标
 ├── docs/
-│   └── index.html            # 完整本地运行文件
+│   └── index.html             # 完整本地运行文件
 ├── css/
 │   ├── styles.css             # 工具箱样式
 │   └── xterm.css              # 终端样式
